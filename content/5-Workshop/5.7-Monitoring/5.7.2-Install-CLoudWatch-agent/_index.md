@@ -87,17 +87,17 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
 
 If you see `"status": "running"`, the Agent is active.
 
-![cloudwatch-agent-status](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-agent-status.png)
+![cloudwatch-agent-status](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CLoudWatch-agent/cloudwatch-agent-status.png)
 
 #### Step 5: Verify Logs and Metrics in the CloudWatch Console
 
 1. Go to **CloudWatch Console** → **Log groups**, find `library-app-logs` — if a new log stream appears, the Docker logs have been sent successfully.
 
-![cloudwatch-log-group](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-log-group.png)
+![cloudwatch-log-group](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CLoudWatch-agent/cloudwatch-log-group.png)
 
 2. Go to **CloudWatch Console** → **Metrics** → **All metrics**, find the `CWAgent` namespace to view the `mem_used_percent`, `disk_used_percent`, and `cpu_usage_active` metrics.
 
-![cloudwatch-metrics](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-metrics.png)
+![cloudwatch-metrics](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CLoudWatch-agent/cloudwatch-metrics.png)
 
 {{% notice warning %}}
 If Docker + CloudWatch Agent + SSH are running simultaneously on a `t3.micro` (1GB RAM), the instance may run out of RAM, causing VS Code Remote-SSH to repeatedly show "Reconnecting". Consider adding a swap file or upgrading to `t3.small` if this happens.

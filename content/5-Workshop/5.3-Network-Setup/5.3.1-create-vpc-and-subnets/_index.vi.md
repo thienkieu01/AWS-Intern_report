@@ -17,7 +17,7 @@ pre : " <b> 5.3.1 </b> "
    - **IPv6 CIDR block**: No IPv6 CIDR block
    - **Tenancy**: Default
 
-![create-vpc](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/create-vpc.png)
+![create-vpc](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/create-vpc.png)
 
 {{% notice note %}}
 Dải CIDR `10.0.0.0/16` cho phép tối đa 65,536 địa chỉ IP trong VPC, đủ để chia thành nhiều subnet nhỏ cho public và private.
@@ -25,7 +25,7 @@ Dải CIDR `10.0.0.0/16` cho phép tối đa 65,536 địa chỉ IP trong VPC, �
 
 4. Kéo xuống cuối trang, kiểm tra lại thông tin (Name tag, IPv4 CIDR) rồi click **Create VPC**.
 
-![create-vpc-confirm](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/create-vpc-confirm.png)
+![create-vpc-confirm](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/create-vpc-confirm.png)
 
 5. Sau khi tạo thành công, bạn sẽ nhận được **VPC ID** (ví dụ: `vpc-0686bd0330b6b622f`) — ghi nhớ ID này để dùng cho các bước tiếp theo.
 
@@ -44,7 +44,7 @@ Dải CIDR `10.0.0.0/16` cho phép tối đa 65,536 địa chỉ IP trong VPC, �
    - **Enable DNS hostnames**
 9. Click **Save**.
 
-![vpc-dns-settings](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/vpc-dns-settings.png)
+![vpc-dns-settings](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/vpc-dns-settings.png)
 
 {{% notice note %}}
 - **Enable DNS resolution**: cho phép các instance trong VPC sử dụng DNS server nội bộ của Amazon để phân giải tên miền.
@@ -72,7 +72,7 @@ Tạo 2 private subnet ở 2 Availability Zone khác nhau (us-east-1a và us-eas
 10. Trong thanh điều hướng, chọn **Subnets**, click **Create subnet**.
 11. Ở phần **VPC**, chọn `vpc-0686bd0330b6b622f (library-vpc)`.
 
-![select-vpc](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/select-vpc.png)
+![select-vpc](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/select-vpc.png)
 
 **Tạo public-subnet:**
 
@@ -82,7 +82,7 @@ Tạo 2 private subnet ở 2 Availability Zone khác nhau (us-east-1a và us-eas
     - **IPv4 subnet CIDR block**: `10.0.1.0/24`
 13. Click **Create subnet**.
 
-![public-subnet](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/public-subnet.png)
+![public-subnet](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/public-subnet.png)
 
 **Tạo private-subnet-1:**
 
@@ -92,7 +92,7 @@ Tạo 2 private subnet ở 2 Availability Zone khác nhau (us-east-1a và us-eas
     - **IPv4 subnet CIDR block**: `10.0.2.0/24`
 15. Click **Create subnet**.
 
-![private-subnet-1](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/private-subnet-1.png)
+![private-subnet-1](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/private-subnet-1.png)
 
 **Tạo private-subnet-2:**
 
@@ -102,7 +102,7 @@ Tạo 2 private subnet ở 2 Availability Zone khác nhau (us-east-1a và us-eas
     - **IPv4 subnet CIDR block**: `10.0.3.0/24`
 17. Click **Create subnet**.
 
-![private-subnet-2](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/private-subnet-2.png)
+![private-subnet-2](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/private-subnet-2.png)
 
 {{% notice note %}}
 Sau khi hoàn tất, bạn sẽ có 1 VPC (`library-vpc`) đã bật DNS resolution/hostnames, chứa 3 subnet: 1 public subnet dùng cho EC2, 2 private subnet dùng cho RDS (Multi-AZ).

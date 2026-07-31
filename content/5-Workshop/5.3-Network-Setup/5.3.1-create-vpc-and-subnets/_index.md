@@ -17,7 +17,7 @@ pre : " <b> 5.3.1 </b> "
    - **IPv6 CIDR block**: No IPv6 CIDR block
    - **Tenancy**: Default
 
-![create-vpc](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/create-vpc.png)
+![create-vpc](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/create-vpc.png)
 
 {{% notice note %}}
 The CIDR range `10.0.0.0/16` allows up to 65,536 IP addresses in the VPC — enough to be split into multiple smaller subnets for public and private use.
@@ -25,7 +25,7 @@ The CIDR range `10.0.0.0/16` allows up to 65,536 IP addresses in the VPC — eno
 
 4. Scroll to the bottom of the page, review the information (Name tag, IPv4 CIDR), then click **Create VPC**.
 
-![create-vpc-confirm](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/create-vpc-confirm.png)
+![create-vpc-confirm](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/create-vpc-confirm.png)
 
 5. After it's created successfully, you'll receive a **VPC ID** (e.g., `vpc-0686bd0330b6b622f`) — note this ID down for use in later steps.
 
@@ -44,7 +44,7 @@ This is a step that's easy to miss but **required** — if not enabled, RDS and 
    - **Enable DNS hostnames**
 9. Click **Save**.
 
-![vpc-dns-settings](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/vpc-dns-settings.png)
+![vpc-dns-settings](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/vpc-dns-settings.png)
 
 {{% notice note %}}
 - **Enable DNS resolution**: allows instances in the VPC to use Amazon's internal DNS server to resolve domain names.
@@ -72,7 +72,7 @@ Create the 2 private subnets in 2 different Availability Zones (us-east-1a and u
 10. In the navigation pane, select **Subnets**, click **Create subnet**.
 11. In the **VPC** field, select `vpc-0686bd0330b6b622f (library-vpc)`.
 
-![select-vpc](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/select-vpc.png)
+![select-vpc](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/select-vpc.png)
 
 **Create public-subnet:**
 
@@ -82,7 +82,7 @@ Create the 2 private subnets in 2 different Availability Zones (us-east-1a and u
     - **IPv4 subnet CIDR block**: `10.0.1.0/24`
 13. Click **Create subnet**.
 
-![public-subnet](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/public-subnet.png)
+![public-subnet](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/public-subnet.png)
 
 **Create private-subnet-1:**
 
@@ -92,7 +92,7 @@ Create the 2 private subnets in 2 different Availability Zones (us-east-1a and u
     - **IPv4 subnet CIDR block**: `10.0.2.0/24`
 15. Click **Create subnet**.
 
-![private-subnet-1](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/private-subnet-1.png)
+![private-subnet-1](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/private-subnet-1.png)
 
 **Create private-subnet-2:**
 
@@ -102,7 +102,7 @@ Create the 2 private subnets in 2 different Availability Zones (us-east-1a and u
     - **IPv4 subnet CIDR block**: `10.0.3.0/24`
 17. Click **Create subnet**.
 
-![private-subnet-2](/images/5-Workshop/5.3-Network-setup/5.3.1-create-vpc-and-subnets/private-subnet-2.png)
+![private-subnet-2](/images/5-Workshop/5.3-Network-Setup/5.3.1-create-vpc-and-subnets/private-subnet-2.png)
 
 {{% notice note %}}
 Once complete, you'll have 1 VPC (`library-vpc`) with DNS resolution/hostnames enabled, containing 3 subnets: 1 public subnet for EC2, and 2 private subnets for RDS (Multi-AZ).
