@@ -101,9 +101,6 @@ EC2's Security Group (`library-ec2-sg`) is referenced in an inbound rule by RDS'
 
 20. Go to **VPC Console** → **Your VPCs**, select `library-vpc`.
 21. Click **Actions** → **Delete VPC**. AWS will display a full list of the child resources that will also be deleted, e.g.: `library-igw`, `public-rt`, `private-rt`, `public-subnet`, `private-subnet-1`...
-
-![delete-vpc-confirm](/images/5-Workshop/5.8-Cleanup/delete-vpc-confirm.png)
-
 22. Type `delete` in the confirmation field, click **Delete**.
 
 {{% notice note %}}

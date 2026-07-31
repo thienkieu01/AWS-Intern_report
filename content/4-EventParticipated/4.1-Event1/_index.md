@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference only. Please do **not copy it verbatim** into your own report, including this warning.
-{{% /notice %}}
-
 # Event Report: "FCAJ x Agentic AI Build Week"
 
 ### Purpose of the Event

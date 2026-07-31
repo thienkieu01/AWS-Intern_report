@@ -16,18 +16,18 @@ Trong phần này, bạn sẽ tạo 2 route table riêng biệt: một cho publi
    - **VPC**: `vpc-0686bd0330b6b622f (library-vpc)`
 3. Click **Create route table**.
 
-![create-public-rt](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/create-public-rt.png)
+![create-public-rt](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/create-public-rt.png)
 
 4. Sau khi tạo thành công, chọn `public-rt`, vào tab **Routes** → click **Edit routes**.
 
-![public-rt-created](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/public-rt-created.png)
+![public-rt-created](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/public-rt-created.png)
 
 5. Click **Add route**, nhập:
    - **Destination**: `0.0.0.0/0`
    - **Target**: chọn **Internet Gateway** đã làm lúc nãy.
 6. Click **Save changes**.
 
-![edit-public-route](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/edit-public-route.png)
+![edit-public-route](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/edit-public-route.png)
 
 {{% notice note %}}
 Route `10.0.0.0/16 → local` được tạo mặc định, cho phép các subnet trong VPC giao tiếp nội bộ với nhau. Route `0.0.0.0/0 → Internet Gateway` mới thêm sẽ cho phép public subnet truy cập ra Internet.
@@ -35,11 +35,11 @@ Route `10.0.0.0/16 → local` được tạo mặc định, cho phép các subne
 
 7. Chuyển sang tab **Subnet associations**, click **Edit subnet associations**.
 
-![public-rt-subnet-tab](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/public-rt-subnet-tab.png)
+![public-rt-subnet-tab](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/public-rt-subnet-tab.png)
 
 8. Tick chọn `public-subnet`, click **Save associations**.
 
-![associate-public-subnet](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/associate-public-subnet.png)
+![associate-public-subnet](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/associate-public-subnet.png)
 
 ---
 
@@ -50,7 +50,7 @@ Route `10.0.0.0/16 → local` được tạo mặc định, cho phép các subne
    - **VPC**: `vpc-0686bd0330b6b622f (library-vpc)`
 10. Click **Create route table**.
 
-![create-private-rt](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/create-private-rt.png)
+![create-private-rt](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/create-private-rt.png)
 
 {{% notice note %}}
 Route table cho private subnet **không** cần thêm route `0.0.0.0/0`. Mặc định nó chỉ chứa route nội bộ: `10.0.0.0/16 → local`, nghĩa là các subnet chỉ giao tiếp được với nhau trong VPC, không thể truy cập/được truy cập từ Internet.
@@ -58,8 +58,8 @@ Route table cho private subnet **không** cần thêm route `0.0.0.0/0`. Mặc �
 
 11. Sau khi tạo xong, chuyển sang tab **Subnet associations**, click **Edit subnet associations**.
 
-![private-rt-subnet-tab](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/private-rt-subnet-tab.png)
+![private-rt-subnet-tab](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/private-rt-subnet-tab.png)
 
 12. Tick chọn cả `private-subnet-1` và `private-subnet-2`, click **Save associations**.
 
-![associate-private-subnet](/images/5-Workshop/5.3-Network-Setup/5.3.3-configure-route-tables/associate-private-subnet.png)
+![associate-private-subnet](/images/5-Workshop/5.3-Network-setup/5.3.3-configure-route-tables/associate-private-subnet.png)

@@ -87,17 +87,17 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a status
 
 Nếu thấy `"status": "running"` là Agent đã hoạt động.
 
-![cloudwatch-agent-status](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-Agent/cloudwatch-agent-status.png)
+![cloudwatch-agent-status](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-agent-status.png)
 
 #### Bước 5: Kiểm tra log và metrics trên CloudWatch Console
 
 1. Vào **CloudWatch Console** → **Log groups**, tìm `library-app-logs` — nếu thấy log stream mới xuất hiện là log Docker đã được gửi lên thành công.
 
-![cloudwatch-log-group](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-Agent/cloudwatch-log-group.png)
+![cloudwatch-log-group](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-log-group.png)
 
 2. Vào **CloudWatch Console** → **Metrics** → **All metrics**, tìm namespace `CWAgent` để xem các chỉ số `mem_used_percent`, `disk_used_percent`, `cpu_usage_active`.
 
-![cloudwatch-metrics](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-Agent/cloudwatch-metrics.png)
+![cloudwatch-metrics](/images/5-Workshop/5.7-Monitoring/5.7.2-Install-CloudWatch-agent/cloudwatch-metrics.png)
 
 {{% notice warning %}}
 Nếu chạy đồng thời Docker + CloudWatch Agent + SSH trên `t3.micro` (1GB RAM), instance có thể bị hết RAM dẫn tới VS Code Remote-SSH báo "Reconnecting" liên tục. Cân nhắc thêm swap file hoặc nâng cấp lên `t3.small` nếu gặp tình trạng này.
