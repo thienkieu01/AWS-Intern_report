@@ -1,0 +1,43 @@
+{{ $url := .Get 0 }}
+{{ with resources.GetRemote $url }}
+  {{ $contributors := . | transform.Unmarshal }}
+
+  <style>
+    .ghContributors {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .ghContributors > div {
+      width: 50%;
+      display: inline-flex;
+      margin-bottom: 5px;
+    }
+
+    .ghContributors > div label {
+      padding-left: 4px;
+    }
+
+    .ghContributors > div span {
+      font-size: x-small;
+      padding-left: 4px;
+    }
+  </style>
+
+  <div class="ghContributors">
+    {{ range $contributors }}
+      <div>
+        <img
+          src="{{ .avatar_url }}"
+          width="32"
+          height="32"
+          style="margin-bottom:0.25em;vertical-align:middle;"
+        />
+        <label><a href="{{ .html_url }}">@{{ .login }}</a></label>
+        <span>{{ .contributions }} commits</span>
+      </div>
+    {{ end }}
+  </div>
+{{ else }}
+  <p>Unable to load contributors.</p>
+{{ end }}
